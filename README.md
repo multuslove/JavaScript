@@ -1,0 +1,2 @@
+# JavaScript
+hexo JavaScript 
