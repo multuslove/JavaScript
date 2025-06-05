@@ -26,7 +26,7 @@ var marcus = {
 
   runtime: () => {
     const pad = (n) => (n > 9 ? n : "0" + n);
-    let startTime = new Date("2022/08/09 00:00:00").getTime();
+    let startTime = new Date("2024/10/13 00:00:00").getTime();
     let nowTime = new Date().getTime();
     let seconds = Math.round((nowTime - startTime) / 1000);
 
