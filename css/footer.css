@@ -142,6 +142,27 @@
   padding: 0 2rem 2rem;
 }
 
+#footer_content #friend-links-in-footer .footer-title button {
+  font-size: 14px;
+  color: var(--font-color);
+  margin-left: 5px;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  -ms-transition: .3s;
+  transition: .3s;
+}
+
+#footer_content #friend-links-in-footer .footer-title button:hover {
+  color: var(--marcus-blue);
+}
+
+@media screen and (max-width: 768px) {
+  #footer_content #friend-links-in-footer h3 {
+    padding-left: 10px;
+  }
+}
+
 #footer_content .footer-group {
   min-width: 120px;
 }
