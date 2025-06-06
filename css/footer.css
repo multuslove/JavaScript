@@ -9,11 +9,12 @@
   margin: auto;
   max-width: 1220px;
   width: 97%;
-  background: rgba(30, 30, 30, 0.4);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 #footer_icons .icon_link {
   height: 40px;
   width: 40px;
@@ -23,39 +24,52 @@
   margin: 1rem;
   background-color: var(--font-color);
   border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
 }
-#footer_icons .icon_link:hover {
-  background-color: var(--marcus-blue) !important;
+
+/* 添加选择效果背景 */
+#footer_icons .icon_link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(200, 200, 200, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
+
+#footer_icons .icon_link:hover::before {
+  opacity: 1;
+}
+
 #footer_icons .icon_link i {
   font-size: 20px;
   color: #fff;
   transition: .3s;
+  z-index: 1;
 }
+
 #footer_icons > div {
   display: flex;
 }
+
 #footer_icons img.footer_logo {
   border-radius: 50%;
   width: 60px;
   height: 60px;
   margin: 0 1rem;
   cursor: pointer;
-  filter: drop-shadow(0 0 12px rgba(150, 255, 246, .4)) !important;
+  filter: drop-shadow(0 0 12px rgba(150, 255, 246, .4));
   transition: all .25s;
 }
-#footer_icons img.footer_logo:hover {
-  filter: drop-shadow(0 0 15px rgba(144, 255, 246, .7)) !important;
-}
 
-/* 响应式隐藏 logo 图标 */
-@media screen and (max-width: 768px) {
-  #footer_icons img.footer_logo {
-    display: none;
-  }
-  #footer_icons a.icon_link {
-    margin: 1rem 20px;
-  }
+#footer_icons img.footer_logo:hover {
+  filter: drop-shadow(0 0 15px rgba(144, 255, 246, .7));
 }
 
 /* 页脚内容区域 */
@@ -69,47 +83,123 @@
   padding: 0 2rem 2rem;
   max-width: 1220px;
   width: 97%;
-  background: rgba(30, 30, 30, 0.4);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 #footer_content .footer-group {
   min-width: 120px;
 }
+
 #footer_content .footer-title {
   color: var(--font-color);
 }
+
 #footer_content .footer-links {
   display: flex;
   flex-direction: column;
 }
+
 #footer_content .footer-item {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--font-color);
 }
+
 #footer_content .footer-item:hover {
   color: var(--marcus-blue);
 }
-#footer_content #friend-links-in-footer .footer-title button {
-  font-size: 14px;
-  color: var(--font-color);
-  margin-left: 5px;
-  transition: .3s;
+
+/* 页脚底部栏 */
+#footer-bottom {
+  padding: 1rem;
+  background: var(--card-bg);
+  z-index: 2;
+  border-top: 1px solid #e3e8f7;
 }
-#footer_content #friend-links-in-footer .footer-title button:hover {
+
+#footer-bottom a {
+  display: flex;
+}
+
+#footer-bottom a:not(:first-child)::before {
+  content: '|';
+  font-size: 14px;
+  line-height: 2.45;
+  margin: 0 10px;
+}
+
+#footer-bottom a:hover {
   color: var(--marcus-blue);
 }
+
+#footer-bottom a:hover::before {
+  color: var(--font-color);
+}
+
+#footer-bottom .footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#footer-bottom .footer-bottom-content * {
+  font-size: 17px;
+  white-space: nowrap;
+  color: var(--font-color);
+}
+
+#footer-bottom .footer-bottom-left,
+#footer-bottom .footer-bottom-right {
+  display: flex;
+  flex-direction: column;
+}
+
+#footer-bottom .footer-bottom-left div,
+#footer-bottom .footer-bottom-right div {
+  display: flex;
+  align-items: center;
+}
+
+#footer-bottom .footer-bottom-right div {
+  justify-content: flex-end;
+}
+
+/* 响应式适配 */
 @media screen and (max-width: 768px) {
+  #footer_icons img.footer_logo {
+    display: none;
+  }
+  
+  #footer_icons a.icon_link {
+    margin: 1rem 20px;
+  }
+  
   #footer_content {
     padding: 1rem;
   }
+  
   #footer_content .footer-group {
     text-align: center;
   }
-  #footer_content #friend-links-in-footer h3 {
-    padding-left: 10px;
+  
+  #footer-bottom {
+    padding: 1rem 0 !important;
+  }
+  
+  #footer-bottom .footer-bottom-content * {
+    font-size: 1rem;
+  }
+  
+  #footer-bottom .footer-bottom-left,
+  #footer-bottom .footer-bottom-right {
+    width: 100%;
+    align-items: center;
   }
 }
 
@@ -121,70 +211,6 @@
   }
 }
 
-/* 页脚底部栏 */
-#footer-bottom {
-  padding: 1rem;
-  background: var(--card-bg);
-  z-index: 2;
-  border-top: 1px solid #e3e8f7;
-}
-#footer-bottom a {
-  display: flex;
-}
-#footer-bottom a:not(:first-child)::before {
-  content: '|';
-  font-size: 14px;
-  line-height: 2.45;
-  margin: 0 10px;
-}
-#footer-bottom a:hover {
-  color: var(--marcus-blue);
-}
-#footer-bottom a:hover::before {
-  color: var(--font-color);
-}
-#footer-bottom .footer-bottom-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1220px;
-  width: 100%;
-  margin: 0 auto;
-}
-#footer-bottom .footer-bottom-content * {
-  font-size: 17px;
-  white-space: nowrap;
-  color: var(--font-color);
-}
-#footer-bottom .footer-bottom-left,
-#footer-bottom .footer-bottom-right {
-  display: flex;
-  flex-direction: column;
-}
-#footer-bottom .footer-bottom-left div,
-#footer-bottom .footer-bottom-left span,
-#footer-bottom .footer-bottom-right div,
-#footer-bottom .footer-bottom-right span {
-  display: flex;
-  align-items: center;
-}
-#footer-bottom .footer-bottom-right div {
-  justify-content: flex-end;
-}
-@media screen and (max-width: 768px) {
-  #footer-bottom {
-    padding: 1rem 0 !important;
-  }
-  #footer-bottom .footer-bottom-content * {
-    font-size: 1rem;
-  }
-  #footer-bottom .footer-bottom-left,
-  #footer-bottom .footer-bottom-right {
-    width: 100%;
-    align-items: center;
-  }
-}
-
 /* 暗黑模式适配 */
 [data-theme=dark] #footer_icons,
 [data-theme=dark] #footer_content {
@@ -193,18 +219,23 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 [data-theme=dark] #footer_icons .icon_link {
   background-color: #ececec;
 }
+
 [data-theme=dark] #footer_icons .icon_link i {
   color: #202020;
 }
+
 [data-theme=dark] #footer_icons .icon_link:hover i {
   color: #fff;
 }
+
 [data-theme=dark] #footer_icons img.footer_logo {
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, .3)) !important;
 }
+
 [data-theme=dark] #footer_icons img.footer_logo:hover {
   filter: drop-shadow(0 0 15px rgba(255, 255, 255, .5)) !important;
 }
