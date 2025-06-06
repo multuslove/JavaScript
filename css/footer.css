@@ -13,7 +13,7 @@
   margin: auto;
   max-width: 1220px;
   width: 97%;
-  background: rgba(245, 249, 255, 0.6);
+  background: rgba(245, 249, 255, 0.2);
 }
 
 #footer_icons .icon_link {
@@ -44,12 +44,12 @@
   height: 60px;
   margin: 0 1rem;
   cursor: pointer;
-  filter: drop-shadow(0 0 12px rgba(150, 255, 246, 0.4)) !important;
+  filter: drop-shadow(0 0 12px rgba(150, 255, 246, 0.2)) !important;
   transition: all 0.25s;
 }
 
 #footer_icons img.footer_logo:hover {
-  filter: drop-shadow(0 0 15px rgba(144, 255, 246, 0.7)) !important;
+  filter: drop-shadow(0 0 15px rgba(144, 255, 246, 0.2)) !important;
 }
 
 #footer_icons > div {
@@ -89,7 +89,7 @@
   margin: auto;
   max-width: 1220px;
   width: 97%;
-  background: rgba(245, 249, 255, 0.6);
+  background: rgba(245, 249, 255, 0.2);
 }
 
 #footer_content .footer-group {
@@ -259,14 +259,14 @@
 }
 
 [data-theme=dark] #footer_icons img.footer_logo {
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3)) !important;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2)) !important;
 }
 
 [data-theme=dark] #footer_icons img.footer_logo:hover {
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)) !important;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2)) !important;
 }
 
 [data-theme=dark] #footer_content,
 [data-theme=dark] #footer_icons {
-  background: rgba(24, 24, 30, 0.5);
+  background: rgba(24, 24, 30, 0.2);
 }
